@@ -49,6 +49,7 @@ module sevsegdisplay(
         numThousands = 0;
         digit_select = 0;
         seg = 0;
+        refreshTimer = 0;
         digit = 0;
     end
    always @ (posedge clk) begin
@@ -71,7 +72,7 @@ module sevsegdisplay(
         endcase
    end
    
-     always @ (number) begin
+     always @ (number, digit_select) begin
         numOnes = number % 10;
         numTens = (number % 100) / 10;
         numHundreds = (number % 1000) / 100;
