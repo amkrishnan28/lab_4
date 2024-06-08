@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+
 module debouncer(input button, input clk, output btn_state);
 reg tempstate = 0;
 reg [15:0] counter;
